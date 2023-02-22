@@ -10,12 +10,15 @@ from tgbot.handlers.echo import echo_router
 from tgbot.handlers.user import user_router
 from tgbot.middlewares.config import ConfigMiddleware
 from tgbot.services import broadcaster
+from tgbot.models.database import Database
+
 
 logger = logging.getLogger(__name__)
 
 
+
 async def on_startup(bot: Bot, admin_ids: list[int]):
-    await broadcaster.broadcast(bot, admin_ids, "Бот був запущений")
+    await broadcaster.broadcast(bot, admin_ids, "Долговая служба на работе")
 
 
 def register_global_middlewares(dp: Dispatcher, config):
@@ -36,8 +39,8 @@ async def main():
     dp = Dispatcher(storage=storage)
 
     for router in [
-        admin_router,
         user_router,
+        admin_router,
         echo_router
     ]:
         dp.include_router(router)
