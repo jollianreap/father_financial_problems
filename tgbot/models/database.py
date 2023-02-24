@@ -45,19 +45,20 @@ class Database:
 
 # ENVIRONMENT FOR TEST
 
-# def main():
-#     db = Database('sqlite:///debts.sqlite')
-#     print(db.get_id_or_debt)
-#     last_id = db.get_id_or_debt()
-#     debt_of_last_id = db.get_id_or_debt(last_id)[0]
-#     print(last_id)
-    # data = {
-    #     "id": last_id+1,
-    #     "debt": debt_of_last_id+2000,
-    #     "date": '27-03-23'
-    # }
-    # db.add_unique_record(data, Sharik_trouble, "id")
+
+def main():
+    db = Database('sqlite:///debts.sqlite')
+    # print(db.get_id_or_debt)
+    # last_id = db.get_id_or_debt()
+    # debt_of_last_id = db.get_id_or_debt(last_id)[0]
+    # print(last_id)
+    data = {
+        "id": 1,
+        "debt": 20000,
+        "date": '17-02-23'
+    }
+    db.add_unique_record(data, Sharik_trouble, "id")
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
